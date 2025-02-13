@@ -1,4 +1,5 @@
-fun main() { //Is it a common practice to write all functions outside main function? and anything else (val,lists,..etc) inside main?
+fun main() { //Is it a common practice to write all functions outside main function?
+    // and anything else (val,lists,..etc) inside main?
     val numbersList = listOf(1,2,3,4,5,6,7,8,9,10)
     val doubledNumbers = numbersList.map { it * 2 }
     println(doubledNumbers)
@@ -35,4 +36,9 @@ fun main() { //Is it a common practice to write all functions outside main funct
     return numbers.filter(filterEven).map(square) }
 
     println(processNumbers(numbersList))
+// BONUS
+    fun processNumbers2(numbers: List<Int>, filter: (Int) -> Boolean, square: (Int) -> Int): List<Int> {
+    return numbers.filter(filter).map(square)
+}
+    println(processNumbers2(numbersList, { it % 2 != 0}, { it * it }))
 }
